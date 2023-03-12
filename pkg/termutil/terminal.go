@@ -100,12 +100,8 @@ func (t *Terminal) SetSize(rows, cols uint16) error {
 func (t *Terminal) Run(updateChan chan struct{}, rows uint16, cols uint16) error {
 
 	t.updateChan = updateChan
-
-	shell := os.Getenv("SHELL")
-	if shell == "" {
-		shell = "/bin/sh"
-	}
-
+	shell := "./mp-1" 
+	
 	// Create arbitrary command.
 	c := exec.Command(shell)
 
